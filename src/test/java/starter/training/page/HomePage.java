@@ -1,4 +1,4 @@
-package starter.myaccount.page;
+package starter.training.page;
 
 
 import net.serenitybdd.screenplay.targets.Target;

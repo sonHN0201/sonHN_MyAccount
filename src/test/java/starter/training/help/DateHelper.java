@@ -1,4 +1,4 @@
-package starter.myaccount.help;
+package starter.training.help;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

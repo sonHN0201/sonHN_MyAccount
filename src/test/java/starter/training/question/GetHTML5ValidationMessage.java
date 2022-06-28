@@ -1,4 +1,4 @@
-package starter.myaccount.question;
+package starter.training.question;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

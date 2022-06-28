@@ -1,14 +1,13 @@
-package starter.myaccount.task;
+package starter.training.task;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import starter.myaccount.help.WaitABit;
-import starter.myaccount.page.HomePage;
-import starter.myaccount.page.MyAccountPage;
+import starter.training.help.WaitABit;
+import starter.training.page.HomePage;
+import starter.training.page.MyAccountPage;
 
 public class RegisterAccount implements Task {
     private final String email;

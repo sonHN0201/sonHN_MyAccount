@@ -1,4 +1,4 @@
-package starter.myaccount.test;
+package starter.training.test;
 
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.Actor;
@@ -9,18 +9,18 @@ import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.thucydides.core.annotations.Title;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import starter.myaccount.help.DateHelper;
-import starter.myaccount.page.MyAccountPage;
-import starter.myaccount.page.NavigateWebsite;
-import starter.myaccount.question.GetHTML5ValidationMessage;
-import starter.myaccount.question.GetText;
-import starter.myaccount.task.RegisterAccount;
+import starter.training.help.DateHelper;
+import starter.training.page.MyAccountPage;
+import starter.training.page.NavigateWebsite;
+import starter.training.question.GetHTML5ValidationMessage;
+import starter.training.question.GetText;
+import starter.training.task.RegisterAccount;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class MyAccountAndRegistration {
+public class MyAccountAndRegistrationTest {
     @CastMember(name = "sonHN")
     Actor sonHN;
 

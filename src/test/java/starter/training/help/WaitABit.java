@@ -1,4 +1,4 @@
-package starter.myaccount.help;
+package starter.training.help;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
