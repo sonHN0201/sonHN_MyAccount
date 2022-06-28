@@ -11,17 +11,18 @@ import starter.myaccount.page.HomePage;
 import starter.myaccount.page.MyAccountPage;
 
 public class RegisterAccount implements Task {
-    final String email;
-    final String password;
+    private final String email;
+    private final String password;
 
     public RegisterAccount(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public static RegisterAccount inputData(String email, String password){
-        return Tasks.instrumented(RegisterAccount.class,email,password);
+    public static RegisterAccount inputData(String email, String password) {
+        return Tasks.instrumented(RegisterAccount.class, email, password);
     }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -31,6 +32,5 @@ public class RegisterAccount implements Task {
                 Enter.theValue(password).into(MyAccountPage.TXT_PASSWORD),
                 Click.on(MyAccountPage.BTN_REGISTER)
         );
-
     }
 }
