@@ -10,7 +10,6 @@ import net.thucydides.core.annotations.Title;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import starter.myaccount.help.DateHelper;
-import starter.myaccount.help.GetHTML5;
 import starter.myaccount.help.Question;
 import starter.myaccount.page.MyAccountPage;
 import starter.myaccount.page.NavigateWebsite;
@@ -44,8 +43,9 @@ public class MyAccountAndRegistration {
         when(sonHN).attemptsTo(RegisterAccount.inputData("son112", "Huynhngocson123@^"));
 
         then(sonHN).should(
-                seeThat("Check the displayed error message", WebElementQuestion.the(),isVisible()
-        ));
+                seeThat("Check error message",WebElementQuestion.the(MyAccountPage.EMAIL_ERROR_MESSAGE),isVisible())
+        );
+
     }
 
     @Test

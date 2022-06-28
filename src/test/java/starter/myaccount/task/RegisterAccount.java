@@ -3,6 +3,7 @@ package starter.myaccount.task;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import starter.myaccount.help.WaitABit;
@@ -30,5 +31,6 @@ public class RegisterAccount implements Task {
                 Enter.theValue(password).into(MyAccountPage.TXT_PASSWORD),
                 Click.on(MyAccountPage.BTN_REGISTER)
         );
+
     }
 }
