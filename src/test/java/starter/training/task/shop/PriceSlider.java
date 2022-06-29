@@ -1,4 +1,4 @@
-package starter.training.task;
+package starter.training.task.shop;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -11,7 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import starter.training.help.WaitABit;
 import starter.training.page.HomePage;
+import starter.training.page.ShopPage;
 
 public class PriceSlider implements Task {
     private final Target element;
@@ -20,8 +22,8 @@ public class PriceSlider implements Task {
         this.element = element;
     }
 
-    public static PriceSlider selectedPrice(){
-        return Tasks.instrumented(PriceSlider.class);
+    public static PriceSlider selectedPrice(Target target){
+        return Tasks.instrumented(PriceSlider.class,target);
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -29,9 +31,13 @@ public class PriceSlider implements Task {
                 Click.on(HomePage.SHOP_MENU)
         );
         WebDriver driver = BrowseTheWeb.as(actor).getDriver();
-        WebElement slider = driver.findElement(By.xpath("div[class*='slider_wrapper']>div>span:nth-of-type(2)"));
-        Actions move = new Actions(driver);
-        Action action = (Action) move.dragAndDropBy(slider,30,0).build();
-        ((Actions) action).perform();
+        WebElement slider1 = driver.findElement(By.xpath(element.getCssOrXPathSelector()));
+        WaitABit.sleep(3000);
+        Actions moveSlider = new Actions(driver);
+        Action action = moveSlider.dragAndDropBy(slider1, -29, 0).build();
+        action.perform();
+        actor.attemptsTo(
+                Click.on(ShopPage.BTN_FILTER)
+        );
     }
 }

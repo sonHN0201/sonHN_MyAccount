@@ -14,7 +14,7 @@ import starter.training.page.MyAccountPage;
 import starter.training.page.NavigateWebsite;
 import starter.training.question.GetHTML5ValidationMessage;
 import starter.training.question.GetText;
-import starter.training.task.RegisterAccount;
+import starter.training.task.myaccount.RegisterAccount;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -58,8 +58,7 @@ public class MyAccountAndRegistrationTest {
         when(sonHN).attemptsTo(RegisterAccount.inputData("", "Huynhngocson123@^"));
 
         then(sonHN).attemptsTo(
-                Ensure.that(GetText.errorMessage()).isEqualTo("Error: Please provide a valid email address.")
-        );
+                Ensure.that(GetText.errorMessage()).isEqualTo("Error: Please provide a valid email address."));
     }
 
     @Test

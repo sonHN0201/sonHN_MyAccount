@@ -1,9 +1,19 @@
 package starter.training.page;
 
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class ShopPage {
-    public static Target RIGHT_BUTTON = Target.the("right button").locatedBy("div[class*='slider_wrapper']>div>span:nth-of-type(2)");
-    public static Target LEFT_BUTTON = Target.the("left button").locatedBy("div[class*='slider_wrapper']>div>span:nth-of-type(1)");
+    public static Target SLIDER_RIGHT = Target.the("right button").locatedBy("//*[@id=\"woocommerce_price_filter-2\"]/form/div/div[1]/span[2]");
     public static Target BTN_FILTER = Target.the("filter button").locatedBy("//button[@type='submit']");
+    public static Target SELECT_CATEGORY = Target.the("select category").located(By.className("orderby"));
+    public static Target SELECT_SORT_BY_POPULARITY = Target.the("select category").locatedBy(".orderby>option:nth-of-type(2)");
+    public static Target SELECT_SORT_BY_AVERAGE_RATINGS = Target.the("select category").locatedBy(".orderby>option:nth-of-type(3)");
+    public static Target SELECT_SORT_BY_NEWNESS = Target.the("select category").locatedBy(".orderby>option:nth-of-type(4)");
+    public static Target SELECT_SORT_BY_LOW_TO_HIGH_ITEM = Target.the("select category").locatedBy(".orderby>option:nth-of-type(5)");
+    public static Target SELECT_SORT_BY_HIGH_TO_LOW_ITEM = Target.the("select category").locatedBy(".orderby>option:nth-of-type(6)");
+    public static Target CHECK = Target.the("check product").locatedBy("//*[@id=\"content\"]/ul/li[1]/a[1]/span");
+    public static Target VIEW_PRODUCT_DETAILS = Target.the("view product details").locatedBy("ul[class*='products']>li:nth-of-type(1)>a>img");
+    public static Target VERIFY_VIEW_PRODUCT_DETAILS = Target.the("view product details").locatedBy("div[class*='entry-summary']>div>div>div>div>p:nth-of-type(1)");
+
 }
