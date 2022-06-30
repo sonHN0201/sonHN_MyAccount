@@ -28,21 +28,21 @@ public class CheckSort implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         WebDriver driver = BrowseTheWeb.as(actor).getDriver();
-        List<WebElement> beforeFilterPrice = driver.findElements(By.cssSelector(".price"));
+        List<WebElement> beforeFilterPrice = driver.findElements(By.cssSelector(".price>span"));
         List<Double> beforeFilterPriceList = new ArrayList<>();
         for (WebElement p : beforeFilterPrice){
-            beforeFilterPriceList.add(Double.valueOf(p.getText().replace("₹","")));
+            p.getText().replace("₹","");
             actor.attemptsTo(
                     Click.on(ShopPage.SELECT_CATEGORY),
                     Click.on(ShopPage.SELECT_SORT_BY_LOW_TO_HIGH_ITEM)
-                    
+
             );
 //        Select dropdown = new Select(driver.findElement(By.cssSelector(".orderby")));
 //        dropdown.selectByVisibleText("Sort by price: low to high");
-        List<WebElement> afterFilterPrice = driver.findElements(By.cssSelector(".price"));
+        List<WebElement> afterFilterPrice = driver.findElements(By.cssSelector(".price>span"));
         List<Double> afterFilterPriceList = new ArrayList<>();
         for (WebElement d : afterFilterPrice){
-            afterFilterPriceList.add(Double.valueOf(d.getText().replace("₹","")));
+            d.getText().replace("₹","");
         }
             Collections.sort(beforeFilterPriceList);
             Assert.assertEquals(beforeFilterPriceList,afterFilterPriceList);
